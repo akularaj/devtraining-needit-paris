@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="DELETE">
+        <applicability/>
+        <category display_value="Customer Service Topics">b28634c4b7b93300da7ab948ee11a93a</category>
+        <channels/>
+        <connect_queue/>
+        <description>Create New Case</description>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{"graph_api_version":"1.0.21","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"e323645498b645d6a7d090c43aead214":{"id":"e323645498b645d6a7d090c43aead214","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"f95aeb4f38754b5186dce0b499dbfbe4":{"id":"f95aeb4f38754b5186dce0b499dbfbe4","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"f0444b3d4f6a44b38d85a31090eeb59f","edgeType":"Edge","source":"e323645498b645d6a7d090c43aead214","target":"f95aeb4f38754b5186dce0b499dbfbe4","sourcePort":"","targetPort":""}]}}}</graph>
+        <key_phrases>Create New Case</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Create New Case</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles>public</roles>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-17 18:40:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>81672a04db4760107f12e04a48961946</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create New Case</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_81672a04db4760107f12e04a48961946</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-17 18:40:29</sys_updated_on>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="DELETE" query="document_key=81672a04db4760107f12e04a48961946"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>02066f27db9253408264f70fbf9619a8</instance_id>
+        <instance_name>dev60302</instance_name>
+        <name>sys_cb_topic_81672a04db4760107f12e04a48961946</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic"><sys_cb_topic action="INSERT_OR_UPDATE"><applicability/><category display_value="Customer Service Topics">b28634c4b7b93300da7ab948ee11a93a</category><channels/><connect_queue/><description>Create New Case</description><flexible_conversation_switching>true</flexible_conversation_switching><graph>{"graph_api_version":"1.0.21","variables":{},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"e323645498b645d6a7d090c43aead214":{"id":"e323645498b645d6a7d090c43aead214","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"f95aeb4f38754b5186dce0b499dbfbe4":{"id":"f95aeb4f38754b5186dce0b499dbfbe4","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}}},"edges":[{"id":"f0444b3d4f6a44b38d85a31090eeb59f","edgeType":"Edge","source":"e323645498b645d6a7d090c43aead214","target":"f95aeb4f38754b5186dce0b499dbfbe4","sourcePort":"","targetPort":""}]}}}</graph><key_phrases>Create New Case</key_phrases><library>false</library><live_agent>false</live_agent><name>Create New Case</name><nlu_intent/><nlu_intent_label/><nlu_model/><nlu_model_label/><nlu_provider/><roles>public</roles><source_topic_id/><sys_class_name>sys_cb_topic</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-03-17 18:40:29</sys_created_on><sys_domain>global</sys_domain><sys_id>81672a04db4760107f12e04a48961946</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Create New Case</sys_name><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>sys_cb_topic_81672a04db4760107f12e04a48961946</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-03-17 18:40:29</sys_updated_on><type>STANDARD</type><variables/></sys_cb_topic><sys_variable_value action="delete_multiple" query="document_key=81672a04db4760107f12e04a48961946"/></record_update>]]></payload>
+        <payload_hash>-475616511</payload_hash>
+        <record_name>Create New Case</record_name>
+        <reverted_from/>
+        <source>148982bfdbb620107f12e04a48961962</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-17 18:40:29</sys_created_on>
+        <sys_id>dd676284db4760107f12e04a48961979</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>178417d3c3f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-17 18:40:29</sys_updated_on>
+        <type>Topic</type>
+        <update_guid>196762848e4760109e10997737a3b179</update_guid>
+        <update_guid_history>196762848e4760109e10997737a3b179:-475616511</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-17 18:54:14</sys_created_on>
+        <sys_db_object display_value="" name="sys_cb_topic">sys_cb_topic</sys_db_object>
+        <sys_id>4feb4033757c452d84a03d0bdbb57061</sys_id>
+        <sys_metadata>81672a04db4760107f12e04a48961946</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create New Case</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_cb_topic_81672a04db4760107f12e04a48961946</sys_update_name>
+        <sys_update_version display_value="sys_cb_topic_81672a04db4760107f12e04a48961946">dd676284db4760107f12e04a48961979</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-17 18:54:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

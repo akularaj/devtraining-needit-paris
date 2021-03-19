@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <category display_value="Customer Service Topics">b28634c4b7b93300da7ab948ee11a93a</category>
+        <channels/>
+        <connect_queue/>
+        <description>Guide New user</description>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.21",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "3b232947b302421ea0c1b3b6b169feb3": {
+          "id": "3b232947b302421ea0c1b3b6b169feb3",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": "Hi {{vaInputs.user.name}} how can I help you",
+            "mode": "simple"
+          }
+        },
+        "aaa580ee709942fa858335e1107c833c": {
+          "id": "aaa580ee709942fa858335e1107c833c",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": "(function execute() {\n    /* Return a quoted string.  For example:\n\n       if (vaInputs.first_name == 'Bill') {\n           return gs.getMessage('hi there {0}', [vaInputs.first_name]);\n       } else {\n           return gs.getMessage('how are you {0}', [vaInputs.last_name]);\n       }\n    */\n    return '';\n})()\n",
+            "mode": "script"
+          }
+        },
+        "5c3b668245d14fc2a3d4bbb342f70fbc": {
+          "id": "5c3b668245d14fc2a3d4bbb342f70fbc",
+          "stepType": "Prompt",
+          "name": "for whom",
+          "prompt": {
+            "value": "Is the query for You",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "0c3b76e2c7094b64a33611581fe3c122"
+        },
+        "735253beed394fd0b1fcc9aef11ca9ff": {
+          "id": "735253beed394fd0b1fcc9aef11ca9ff",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "87a908891e5444dcac58f115f46d2096": {
+          "stepType": "ChoicePrompt",
+          "name": "topic",
+          "prompt": {
+            "value": "Select the topic",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "80664eb7897444ef809e233cf2858ac3",
+          "id": "87a908891e5444dcac58f115f46d2096",
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "7dd2fdeb639148f6a4f5e0718c1d1916": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "Employee Id",
+          "prompt": {
+            "value": "Select the Employee Id",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "8ae09061faab40188a1e08c4fafed8e1",
+          "id": "7dd2fdeb639148f6a4f5e0718c1d1916",
+          "mode": "glide_record",
+          "script": "",
+          "noRecordsResponseMsg": {
+            "value": "No Record Found / You are not authorised to view the details",
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "active=true"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "012023eaec0c4b878634f45ed35aa3f6": {
+          "id": "012023eaec0c4b878634f45ed35aa3f6",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "029ae0d9a8a5467f8075596a643b52fb": {
+          "id": "029ae0d9a8a5467f8075596a643b52fb",
+          "stepType": "RecordOutput",
+          "name": "My Profile",
+          "variableId": "c7b4012e99f04424ae97a73654beead5",
+          "mode": "variable",
+          "tableName": "sys_user",
+          "fields": [
+            "email",
+            "company",
+            "first_name",
+            "last_name",
+            "user_name"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        },
+        "2f5fc5ba9e554d7e940e980dbe365bbf": {
+          "id": "2f5fc5ba9e554d7e940e980dbe365bbf",
+          "stepType": "RecordOutput",
+          "name": "My Organization",
+          "variableId": "c7b4012e99f04424ae97a73654beead5",
+          "mode": "variable",
+          "tableName": "sys_user",
+          "fields": [
+            "manager",
+            "roles",
+            "department",
+            "vip"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        },
+        "b01d11d0cfd948b2a2d189540afcd595": {
+          "id": "b01d11d0cfd948b2a2d189540afcd595",
+          "stepType": "RecordOutput",
+          "name": "My Location",
+          "variableId": "c7b4012e99f04424ae97a73654beead5",
+          "mode": "variable",
+          "tableName": "sys_user",
+          "fields": [
+            "building",
+            "phone",
+            "city",
+            "country",
+            "department",
+            "location",
+            "zip"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        },
+        "c693f3dc902449b1be3035bd06095575": {
+          "id": "c693f3dc902449b1be3035bd06095575",
+          "stepType": "Decision",
+          "name": "Want to check for Other"
+        },
+        "791aeae481144a7d8474a9fabae9ddae": {
+          "id": "791aeae481144a7d8474a9fabae9ddae",
+          "stepType": "Prompt",
+          "name": "Want to Check another user",
+          "prompt": {
+            "value": "Want to Check another user",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "9c161ac97bd5458cad8eee9ee85a3827"
+        },
+        "6f3a4b7fc0744982977e3c8c75496f08": {
+          "stepType": "ChoicePrompt",
+          "name": "What details",
+          "prompt": {
+            "value": "Select details you would like to view",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "2b7fd9f137d0460f88085b262e946b7d",
+          "id": "6f3a4b7fc0744982977e3c8c75496f08",
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "1cffa5cddb7f4900be5319e1ec53abec": {
+          "id": "1cffa5cddb7f4900be5319e1ec53abec",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "225c089078d24e64bf2cfb394f3b0293": {
+          "id": "225c089078d24e64bf2cfb394f3b0293",
+          "stepType": "RecordOutput",
+          "name": "Manager",
+          "variableId": "8ae09061faab40188a1e08c4fafed8e1",
+          "mode": "variable",
+          "tableName": "sys_user",
+          "fields": [
+            "manager",
+            "photo"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        },
+        "5558fec953fd413e89ee1759bc8b4c63": {
+          "id": "5558fec953fd413e89ee1759bc8b4c63",
+          "stepType": "RecordOutput",
+          "name": "Department",
+          "variableId": "8ae09061faab40188a1e08c4fafed8e1",
+          "mode": "variable",
+          "tableName": "sys_user",
+          "fields": [
+            "department"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        },
+        "69bd32a1a35940629e83f50f2e79efe2": {
+          "id": "69bd32a1a35940629e83f50f2e79efe2",
+          "stepType": "RecordOutput",
+          "name": "Role",
+          "variableId": "8ae09061faab40188a1e08c4fafed8e1",
+          "mode": "variable",
+          "tableName": "sys_user",
+          "fields": [
+            "roles"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        },
+        "2795e3e9e13d48898d95229fbeac3d22": {
+          "id": "2795e3e9e13d48898d95229fbeac3d22",
+          "stepType": "Prompt",
+          "name": "Upload Picture",
+          "prompt": {
+            "value": "Upload only jpeg pictures",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "443c61f8229043b49fa0adeec0c22da3"
+        },
+        "a206cea853b347b58c45769a8c4556bd": {
+          "id": "a206cea853b347b58c45769a8c4556bd",
+          "stepType": "TextOutput",
+          "name": "Agent Respon se 1",
+          "value": {
+            "value": "Please select employee id",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "a2ee8166448942c4a09397107d9bcc51": {
+          "id": "a2ee8166448942c4a09397107d9bcc51",
+          "stepType": "CrudAction",
+          "name": "Update Picture",
+          "template": "photo={{vaInputs.upload_picture}}",
+          "mode": "update",
+          "record": "c7b4012e99f04424ae97a73654beead5",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "6753718bf373403bb9e244b8be423a8e"
+        },
+        "c076b2b0fc8d4d1aac75b70bed44876a": {
+          "id": "c076b2b0fc8d4d1aac75b70bed44876a",
+          "stepType": "CrudAction",
+          "name": "Update My Location",
+          "template": "building={{vaInputs.select_building}}",
+          "mode": "update",
+          "record": "c7b4012e99f04424ae97a73654beead5",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "c0d3ae5f86564c939bd4115562fe8d96"
+        },
+        "c9315a93fec14cf6b46512b7b63e7f63": {
+          "id": "c9315a93fec14cf6b46512b7b63e7f63",
+          "stepType": "Prompt",
+          "name": "Want to Change Building",
+          "prompt": {
+            "value": "Want to Change Building",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "849668c461404e138866113d9e1a5b5c"
+        },
+        "6782e82ac6fc4b2694f34d10d6f623dd": {
+          "id": "6782e82ac6fc4b2694f34d10d6f623dd",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "d56cd8a170b246cda3ebe0b9eed68c2c": {
+          "stepType": "ReferenceChoicePrompt",
+          "name": "Select Building",
+          "prompt": {
+            "value": "Select Building",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "e79a547b8e0d45e3836865cf01f8ad2a",
+          "id": "d56cd8a170b246cda3ebe0b9eed68c2c",
+          "mode": "glide_record",
+          "script": "",
+          "noRecordsResponseMsg": {
+            "value": "No Building Selected",
+            "mode": "simple"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_created_on&lt;javascript:gs.dateGenerate('2021-03-17','22:31:35')"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "9d9b02d506644610a4e33fe3da3534cd": {
+          "id": "9d9b02d506644610a4e33fe3da3534cd",
+          "name": "Connect To Live agent",
+          "script": "(function execute() {\n    /* Code your scripted action here. For example, you might update a\n       record based on conditional logic:\n\n        if (vaVars.my_flag == 'say hello') {\n            gs.info('hi there');\n        } else {\n            gs.info('bye now');\n        }\n    */\n\n    // Transfer to a live agent\n\t   // vaSystem.connectToAgent()\n\n         if(vaSystem.isLiveAgentAvailable()) { \n             gs.log(\"RA Virtual Agent is True\");\n           vaSystem.connectToAgent();\n        } else{\n            gs.log(\"RA Virtual Agent is False\");\n            return 'Live Agent is not current available. Please check back later.';\n        }\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "mode": "query",
+            "value": ""
+          }
+        },
+        "ba008c01465e464faea948402cf5b9b6": {
+          "id": "ba008c01465e464faea948402cf5b9b6",
+          "name": "Emp Name",
+          "script": "(function execute() {\n    /* Code your scripted action here. For example, you might update a\n       record based on conditional logic:\n\n        if (vaVars.my_flag == 'say hello') {\n            gs.info('hi there');\n        } else {\n            gs.info('bye now');\n        }\n    */\n    vaVars.User_email_id = \"test@company.com\";\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "a9d105c7b6b8419987c0802e83938484": {
+          "id": "a9d105c7b6b8419987c0802e83938484",
+          "stepType": "Prompt",
+          "name": "check another",
+          "prompt": {
+            "value": "Do you want to Check another User",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "47a97b8d8626442086d1bc36a51dd266"
+        },
+        "0f2007e0cd444cfabe5c5f87bdf99a60": {
+          "id": "0f2007e0cd444cfabe5c5f87bdf99a60",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "e3931836da8849b793260bf29dae1850": {
+          "id": "e3931836da8849b793260bf29dae1850",
+          "stepType": "RecordOutput",
+          "name": "My Updated Location",
+          "variableId": "c7b4012e99f04424ae97a73654beead5",
+          "mode": "variable",
+          "tableName": "sys_user",
+          "fields": [
+            "building"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "b6342cad4f154a9aab07f38f2c299eda",
+          "edgeType": "Edge",
+          "source": "c9315a93fec14cf6b46512b7b63e7f63",
+          "target": "6782e82ac6fc4b2694f34d10d6f623dd",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9ae389180282432e836d559a8c6b4207",
+          "edgeType": "Branch",
+          "source": "735253beed394fd0b1fcc9aef11ca9ff",
+          "target": "87a908891e5444dcac58f115f46d2096",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.for_whom=true",
+            "mode": "query"
+          },
+          "label": "For Myself"
+        },
+        {
+          "id": "791018400f144d3a992a801055f369f0",
+          "edgeType": "Edge",
+          "source": "5c3b668245d14fc2a3d4bbb342f70fbc",
+          "target": "735253beed394fd0b1fcc9aef11ca9ff",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "3fe00e94f6a74824bb21168fd605571b",
+          "edgeType": "Edge",
+          "source": "87a908891e5444dcac58f115f46d2096",
+          "target": "012023eaec0c4b878634f45ed35aa3f6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "bfa8f1d808df46c1940d8d65a085545f",
+          "edgeType": "Edge",
+          "source": "3b232947b302421ea0c1b3b6b169feb3",
+          "target": "5c3b668245d14fc2a3d4bbb342f70fbc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0c9f6f9e494b48dc9b3ecd2202c95b75",
+          "edgeType": "Branch",
+          "source": "012023eaec0c4b878634f45ed35aa3f6",
+          "target": "029ae0d9a8a5467f8075596a643b52fb",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.topic=my_profile",
+            "mode": "query"
+          },
+          "label": "My Profile"
+        },
+        {
+          "id": "bf6cd76e8bbc404a8bb0521d00032b15",
+          "edgeType": "Branch",
+          "source": "012023eaec0c4b878634f45ed35aa3f6",
+          "target": "2f5fc5ba9e554d7e940e980dbe365bbf",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.topic=my_organization",
+            "mode": "query"
+          },
+          "label": "My Organization"
+        },
+        {
+          "id": "dcc62390556f41348bf46908ecac7747",
+          "edgeType": "Branch",
+          "source": "012023eaec0c4b878634f45ed35aa3f6",
+          "target": "b01d11d0cfd948b2a2d189540afcd595",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.topic=my_location",
+            "mode": "query"
+          },
+          "label": "My Location"
+        },
+        {
+          "id": "ac7506b5f0ca42a2b875b7484e30bc79",
+          "edgeType": "Edge",
+          "source": "029ae0d9a8a5467f8075596a643b52fb",
+          "target": "791aeae481144a7d8474a9fabae9ddae",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ecba709e39d049e4b89ac830e3a6ef79",
+          "edgeType": "Branch",
+          "source": "c693f3dc902449b1be3035bd06095575",
+          "target": "7dd2fdeb639148f6a4f5e0718c1d1916",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.want_to_check_another_user=true",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "00af498bfd8e4a358ccbbe5666f00a85",
+          "edgeType": "Edge",
+          "source": "791aeae481144a7d8474a9fabae9ddae",
+          "target": "c693f3dc902449b1be3035bd06095575",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b651a97e2d88484c821c5e782d46289c",
+          "edgeType": "Branch",
+          "source": "c693f3dc902449b1be3035bd06095575",
+          "target": "aaa580ee709942fa858335e1107c833c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.want_to_check_another_user!=true",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "1f15e14b88bf493487accba5eb885391",
+          "edgeType": "Edge",
+          "source": "7dd2fdeb639148f6a4f5e0718c1d1916",
+          "target": "6f3a4b7fc0744982977e3c8c75496f08",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "84ea193bc9904628bf4e8735b4ae8426",
+          "edgeType": "Edge",
+          "source": "6f3a4b7fc0744982977e3c8c75496f08",
+          "target": "1cffa5cddb7f4900be5319e1ec53abec",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "68a5b98c901f449eae097733b045d098",
+          "edgeType": "Branch",
+          "source": "1cffa5cddb7f4900be5319e1ec53abec",
+          "target": "225c089078d24e64bf2cfb394f3b0293",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.what_details=manager",
+            "mode": "query"
+          },
+          "label": "Manager"
+        },
+        {
+          "id": "0546f8d155514a61b92cb5bf2137a1e3",
+          "edgeType": "Edge",
+          "source": "225c089078d24e64bf2cfb394f3b0293",
+          "target": "a9d105c7b6b8419987c0802e83938484",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "84899f91cd3a4234bc0ddf0920effd28",
+          "edgeType": "Branch",
+          "source": "1cffa5cddb7f4900be5319e1ec53abec",
+          "target": "5558fec953fd413e89ee1759bc8b4c63",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.what_details=department",
+            "mode": "query"
+          },
+          "label": "Department"
+        },
+        {
+          "id": "ddb5c73c77c742468cd39cb21a25a23f",
+          "edgeType": "Branch",
+          "source": "1cffa5cddb7f4900be5319e1ec53abec",
+          "target": "69bd32a1a35940629e83f50f2e79efe2",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.what_details=role",
+            "mode": "query"
+          },
+          "label": "Role"
+        },
+        {
+          "id": "ec76ed220b8846f28417adfa4ed8b622",
+          "edgeType": "Edge",
+          "source": "69bd32a1a35940629e83f50f2e79efe2",
+          "target": "a9d105c7b6b8419987c0802e83938484",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "eab8779e04b2480e9da6b3440a6c62ef",
+          "edgeType": "Branch",
+          "source": "012023eaec0c4b878634f45ed35aa3f6",
+          "target": "2795e3e9e13d48898d95229fbeac3d22",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.topic=update_picture",
+            "mode": "query"
+          },
+          "label": "Update Picture"
+        },
+        {
+          "id": "0f8a3ad2dd03465f9a96ef8120d98746",
+          "edgeType": "Branch",
+          "source": "735253beed394fd0b1fcc9aef11ca9ff",
+          "target": "a206cea853b347b58c45769a8c4556bd",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.for_whom!=true",
+            "mode": "query"
+          },
+          "label": "For Other"
+        },
+        {
+          "id": "f71f8458cb7a41498073d5f861adbfc9",
+          "edgeType": "Edge",
+          "source": "a206cea853b347b58c45769a8c4556bd",
+          "target": "7dd2fdeb639148f6a4f5e0718c1d1916",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7b2de7dfb5c842dcbd3b05818dd9a777",
+          "edgeType": "Edge",
+          "source": "2795e3e9e13d48898d95229fbeac3d22",
+          "target": "a2ee8166448942c4a09397107d9bcc51",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "30134a7936764f3b85dabf035b0d4d44",
+          "edgeType": "Edge",
+          "source": "a2ee8166448942c4a09397107d9bcc51",
+          "target": "791aeae481144a7d8474a9fabae9ddae",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1f476f4e1ef04ce08b86e15358838141",
+          "edgeType": "Edge",
+          "source": "b01d11d0cfd948b2a2d189540afcd595",
+          "target": "c9315a93fec14cf6b46512b7b63e7f63",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c29c5024b1bb4555a592ebde89b74cf2",
+          "edgeType": "Branch",
+          "source": "6782e82ac6fc4b2694f34d10d6f623dd",
+          "target": "791aeae481144a7d8474a9fabae9ddae",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.want_to_change_buildingISEMPTY",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "687d42b639ee4c3d813146a1a682432e",
+          "edgeType": "Branch",
+          "source": "6782e82ac6fc4b2694f34d10d6f623dd",
+          "target": "d56cd8a170b246cda3ebe0b9eed68c2c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.want_to_change_building=true",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "a57ffca4390646ff89c1977ca8c414f5",
+          "edgeType": "Edge",
+          "source": "d56cd8a170b246cda3ebe0b9eed68c2c",
+          "target": "c076b2b0fc8d4d1aac75b70bed44876a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "80ae6c2a4c0d494cbcf9f1bac24fec37",
+          "edgeType": "Edge",
+          "source": "9d9b02d506644610a4e33fe3da3534cd",
+          "target": "791aeae481144a7d8474a9fabae9ddae",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f64497cf844a4078881cea8e3ff3ac6c",
+          "edgeType": "Edge",
+          "source": "2f5fc5ba9e554d7e940e980dbe365bbf",
+          "target": "ba008c01465e464faea948402cf5b9b6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "fa17cc89962d4ae6ad1b2a771c330db5",
+          "edgeType": "Edge",
+          "source": "ba008c01465e464faea948402cf5b9b6",
+          "target": "791aeae481144a7d8474a9fabae9ddae",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9ca1ab17e0fe45268939a82a29dabde8",
+          "edgeType": "Edge",
+          "source": "5558fec953fd413e89ee1759bc8b4c63",
+          "target": "a9d105c7b6b8419987c0802e83938484",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "10302c67bcf8401fb4b2f8f99148654b",
+          "edgeType": "Edge",
+          "source": "a9d105c7b6b8419987c0802e83938484",
+          "target": "0f2007e0cd444cfabe5c5f87bdf99a60",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b588b13f5c0b43f69690a488a8cfbe63",
+          "edgeType": "Branch",
+          "source": "0f2007e0cd444cfabe5c5f87bdf99a60",
+          "target": "aaa580ee709942fa858335e1107c833c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.check_anotherISEMPTY",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "f35baf4934e148f98b009842feaf36ac",
+          "edgeType": "Branch",
+          "source": "0f2007e0cd444cfabe5c5f87bdf99a60",
+          "target": "7dd2fdeb639148f6a4f5e0718c1d1916",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.check_another=true",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "719cd80a30ba4c2ba1cb0188f846cb52",
+          "edgeType": "Edge",
+          "source": "c076b2b0fc8d4d1aac75b70bed44876a",
+          "target": "e3931836da8849b793260bf29dae1850",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a4948fb591624bf5aaa8278d9e8828b7",
+          "edgeType": "Edge",
+          "source": "e3931836da8849b793260bf29dae1850",
+          "target": "9d9b02d506644610a4e33fe3da3534cd",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "9c44868aec07426792cc48331e26520a": {
+      "id": "9c44868aec07426792cc48331e26520a",
+      "name": "LiveAgent_application",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "706e7ef83610404b96a1166986632fa3": {
+      "id": "706e7ef83610404b96a1166986632fa3",
+      "name": "LiveAgent_short_description",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "d36409a1a483469f9b46da965946e1b0": {
+      "id": "d36409a1a483469f9b46da965946e1b0",
+      "name": "LiveAgent_search_text",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "330abbb92d27425e87ce3deb12d528b8": {
+      "id": "330abbb92d27425e87ce3deb12d528b8",
+      "name": "LiveAgent_portal",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "9d40ee81536b4144b329d358e42dc8a4": {
+      "id": "9d40ee81536b4144b329d358e42dc8a4",
+      "name": "LiveAgent_case",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "c7b4012e99f04424ae97a73654beead5": {
+      "category": "vaInputs",
+      "id": "c7b4012e99f04424ae97a73654beead5",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "0c3b76e2c7094b64a33611581fe3c122": {
+      "id": "0c3b76e2c7094b64a33611581fe3c122",
+      "name": "for_whom",
+      "label": "For Whom",
+      "varType": "boolean",
+      "category": "vaInputs"
+    },
+    "80664eb7897444ef809e233cf2858ac3": {
+      "id": "80664eb7897444ef809e233cf2858ac3",
+      "name": "topic",
+      "label": "Topic",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "My Profile",
+          "value": "my_profile"
+        },
+        {
+          "label": "My Organization",
+          "value": "my_organization",
+          "checked": true
+        },
+        {
+          "label": "My Location",
+          "value": "my_location",
+          "checked": true
+        },
+        {
+          "label": "Update Picture",
+          "value": "update_picture",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "8ae09061faab40188a1e08c4fafed8e1": {
+      "id": "8ae09061faab40188a1e08c4fafed8e1",
+      "name": "employee_id",
+      "label": "Employee Id",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "9c161ac97bd5458cad8eee9ee85a3827": {
+      "id": "9c161ac97bd5458cad8eee9ee85a3827",
+      "name": "want_to_check_another_user",
+      "label": "Want To Check Another User",
+      "varType": "boolean",
+      "category": "vaInputs"
+    },
+    "2b7fd9f137d0460f88085b262e946b7d": {
+      "id": "2b7fd9f137d0460f88085b262e946b7d",
+      "name": "what_details",
+      "label": "What Details",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Manager",
+          "value": "manager"
+        },
+        {
+          "label": "Department",
+          "value": "department",
+          "checked": true
+        },
+        {
+          "label": "Role",
+          "value": "role",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "443c61f8229043b49fa0adeec0c22da3": {
+      "id": "443c61f8229043b49fa0adeec0c22da3",
+      "name": "upload_picture",
+      "label": "Upload Picture",
+      "varType": "image",
+      "category": "vaInputs"
+    },
+    "f789a5b8d328446f9922667e3b1f2767": {
+      "id": "f789a5b8d328446f9922667e3b1f2767",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "User_email_id",
+      "label": "User_email_id",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "6753718bf373403bb9e244b8be423a8e": {
+      "id": "6753718bf373403bb9e244b8be423a8e",
+      "name": "update_picture",
+      "label": "Update Picture",
+      "varType": "reference",
+      "table": "",
+      "inactive": true,
+      "category": "vaInputs"
+    },
+    "c0d3ae5f86564c939bd4115562fe8d96": {
+      "id": "c0d3ae5f86564c939bd4115562fe8d96",
+      "name": "update_my_location",
+      "label": "Update My Location",
+      "varType": "reference",
+      "table": "sys_user",
+      "inactive": true,
+      "category": "vaInputs"
+    },
+    "849668c461404e138866113d9e1a5b5c": {
+      "id": "849668c461404e138866113d9e1a5b5c",
+      "name": "want_to_change_building",
+      "label": "Want To Change Building",
+      "varType": "boolean",
+      "category": "vaInputs"
+    },
+    "e79a547b8e0d45e3836865cf01f8ad2a": {
+      "id": "e79a547b8e0d45e3836865cf01f8ad2a",
+      "name": "select_building",
+      "label": "Select Building",
+      "varType": "reference",
+      "table": "cmn_building",
+      "category": "vaInputs"
+    },
+    "47a97b8d8626442086d1bc36a51dd266": {
+      "id": "47a97b8d8626442086d1bc36a51dd266",
+      "name": "check_another",
+      "label": "Check Another",
+      "varType": "boolean",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>User Profile Update,R User Setup Guide,User Setup Guide,update location,update user info</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>User Profile Update</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <source_topic_id>2c319a77dbf620107f12e04a4896195c</source_topic_id>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>rakesha</sys_created_by>
+        <sys_created_on>2021-03-16 22:37:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>a7141e7bdbf620107f12e04a48961945</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>User Profile Update</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_a7141e7bdbf620107f12e04a48961945</sys_update_name>
+        <sys_updated_by>rakesha</sys_updated_by>
+        <sys_updated_on>2021-03-19 09:18:25</sys_updated_on>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=a7141e7bdbf620107f12e04a48961945"/>
+</record_update>

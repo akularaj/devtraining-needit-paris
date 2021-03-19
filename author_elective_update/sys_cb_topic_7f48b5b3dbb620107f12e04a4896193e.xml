@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="DELETE">
+        <applicability/>
+        <category display_value="Customer Service Topics">b28634c4b7b93300da7ab948ee11a93a</category>
+        <channels/>
+        <connect_queue/>
+        <description>Guide New user</description>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.21",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "b17a1111a40b4bdd9a832c635d1f3851": {
+          "id": "b17a1111a40b4bdd9a832c635d1f3851",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": "Hi {{vaInputs.user.name}} how can I help you",
+            "mode": "simple"
+          }
+        },
+        "fc21625452384e5cbb73add1847fa78c": {
+          "id": "fc21625452384e5cbb73add1847fa78c",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": "(function execute() {\n    /* Return a quoted string.  For example:\n\n       if (vaInputs.first_name == 'Bill') {\n           return gs.getMessage('hi there {0}', [vaInputs.first_name]);\n       } else {\n           return gs.getMessage('how are you {0}', [vaInputs.last_name]);\n       }\n    */\n    return '';\n})()\n",
+            "mode": "script"
+          }
+        },
+        "cea7a9c3e6dc42b2b3d933127faf690d": {
+          "id": "cea7a9c3e6dc42b2b3d933127faf690d",
+          "stepType": "Prompt",
+          "name": "for whom",
+          "prompt": {
+            "value": "Is the query for You",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "386efcb3854d4061b83cd999e4aeb6ba"
+        },
+        "11446d444e2149bfb09a2bf2724699c8": {
+          "id": "11446d444e2149bfb09a2bf2724699c8",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "1ae05d9dc0e04e8ca22d53f8ae97446d": {
+          "id": "1ae05d9dc0e04e8ca22d53f8ae97446d",
+          "stepType": "Prompt",
+          "name": "Want to Change Building",
+          "prompt": {
+            "value": "Want to Change Building",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "bb8a117aba0c47f688cf46b1bbf078d9"
+        }
+      },
+      "edges": [
+        {
+          "id": "80d6a6fe5be54ffd9dcdae730c169e5c",
+          "edgeType": "Edge",
+          "source": "1ae05d9dc0e04e8ca22d53f8ae97446d",
+          "target": "fc21625452384e5cbb73add1847fa78c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f060a0e258d44f37bf18557dd16bc825",
+          "edgeType": "Branch",
+          "source": "11446d444e2149bfb09a2bf2724699c8",
+          "target": "1ae05d9dc0e04e8ca22d53f8ae97446d",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.for_whom=true",
+            "mode": "query"
+          },
+          "label": "For Myself"
+        },
+        {
+          "id": "f2b65beda6364a22807972edfcf364a8",
+          "edgeType": "Edge",
+          "source": "cea7a9c3e6dc42b2b3d933127faf690d",
+          "target": "11446d444e2149bfb09a2bf2724699c8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1decaa260f724917a14294db9c0d4cb2",
+          "edgeType": "Edge",
+          "source": "b17a1111a40b4bdd9a832c635d1f3851",
+          "target": "cea7a9c3e6dc42b2b3d933127faf690d",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "85f2902596b946ab94d40a14b3f194fb": {
+      "id": "85f2902596b946ab94d40a14b3f194fb",
+      "name": "LiveAgent_application",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "9800625204944ea49d3ddd13911ca3ed": {
+      "id": "9800625204944ea49d3ddd13911ca3ed",
+      "name": "LiveAgent_short_description",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "64b39c056518488f9cf1e98d678492b2": {
+      "id": "64b39c056518488f9cf1e98d678492b2",
+      "name": "LiveAgent_search_text",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "24edbff2575b489eb1f99baa7d5cf6dd": {
+      "id": "24edbff2575b489eb1f99baa7d5cf6dd",
+      "name": "LiveAgent_portal",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "2a0ab7e39bd94d039c03ada6e7b08d9f": {
+      "id": "2a0ab7e39bd94d039c03ada6e7b08d9f",
+      "name": "LiveAgent_case",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "738d70fe520a4d5c828bc568d0d4904e": {
+      "category": "vaInputs",
+      "id": "738d70fe520a4d5c828bc568d0d4904e",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "386efcb3854d4061b83cd999e4aeb6ba": {
+      "id": "386efcb3854d4061b83cd999e4aeb6ba",
+      "name": "for_whom",
+      "label": "For Whom",
+      "varType": "boolean",
+      "category": "vaInputs"
+    },
+    "d19c14632aed469c900c64fb5572b3be": {
+      "id": "d19c14632aed469c900c64fb5572b3be",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "User_email_id",
+      "label": "User_email_id",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "bb8a117aba0c47f688cf46b1bbf078d9": {
+      "id": "bb8a117aba0c47f688cf46b1bbf078d9",
+      "name": "want_to_change_building",
+      "label": "Want To Change Building",
+      "varType": "boolean",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>copy_Of_User_Setup_Guide,User Setup Guide</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>copy_Of_User_Setup_Guide</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles>public</roles>
+        <source_topic_id>1e9bd8bfdb7220107f12e04a4896190a</source_topic_id>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-16 20:36:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7f48b5b3dbb620107f12e04a4896193e</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>copy_Of_User_Setup_Guide</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_7f48b5b3dbb620107f12e04a4896193e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-16 21:08:39</sys_updated_on>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="DELETE" query="document_key=7f48b5b3dbb620107f12e04a4896193e"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>02066f27db9253408264f70fbf9619a8</instance_id>
+        <instance_name>dev60302</instance_name>
+        <name>sys_cb_topic_7f48b5b3dbb620107f12e04a4896193e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic"><sys_cb_topic action="INSERT_OR_UPDATE"><applicability/><category display_value="Customer Service Topics">b28634c4b7b93300da7ab948ee11a93a</category><channels/><connect_queue/><description>Guide New user</description><flexible_conversation_switching>true</flexible_conversation_switching><graph>{
+  "graph_api_version": "1.0.21",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "b17a1111a40b4bdd9a832c635d1f3851": {
+          "id": "b17a1111a40b4bdd9a832c635d1f3851",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": "Hi {{vaInputs.user.name}} how can I help you",
+            "mode": "simple"
+          }
+        },
+        "fc21625452384e5cbb73add1847fa78c": {
+          "id": "fc21625452384e5cbb73add1847fa78c",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": "(function execute() {\n    /* Return a quoted string.  For example:\n\n       if (vaInputs.first_name == 'Bill') {\n           return gs.getMessage('hi there {0}', [vaInputs.first_name]);\n       } else {\n           return gs.getMessage('how are you {0}', [vaInputs.last_name]);\n       }\n    */\n    return '';\n})()\n",
+            "mode": "script"
+          }
+        },
+        "cea7a9c3e6dc42b2b3d933127faf690d": {
+          "id": "cea7a9c3e6dc42b2b3d933127faf690d",
+          "stepType": "Prompt",
+          "name": "for whom",
+          "prompt": {
+            "value": "Is the query for You",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "386efcb3854d4061b83cd999e4aeb6ba"
+        },
+        "11446d444e2149bfb09a2bf2724699c8": {
+          "id": "11446d444e2149bfb09a2bf2724699c8",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "1ae05d9dc0e04e8ca22d53f8ae97446d": {
+          "id": "1ae05d9dc0e04e8ca22d53f8ae97446d",
+          "stepType": "Prompt",
+          "name": "Want to Change Building",
+          "prompt": {
+            "value": "Want to Change Building",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "bb8a117aba0c47f688cf46b1bbf078d9"
+        }
+      },
+      "edges": [
+        {
+          "id": "80d6a6fe5be54ffd9dcdae730c169e5c",
+          "edgeType": "Edge",
+          "source": "1ae05d9dc0e04e8ca22d53f8ae97446d",
+          "target": "fc21625452384e5cbb73add1847fa78c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f060a0e258d44f37bf18557dd16bc825",
+          "edgeType": "Branch",
+          "source": "11446d444e2149bfb09a2bf2724699c8",
+          "target": "1ae05d9dc0e04e8ca22d53f8ae97446d",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.for_whom=true",
+            "mode": "query"
+          },
+          "label": "For Myself"
+        },
+        {
+          "id": "f2b65beda6364a22807972edfcf364a8",
+          "edgeType": "Edge",
+          "source": "cea7a9c3e6dc42b2b3d933127faf690d",
+          "target": "11446d444e2149bfb09a2bf2724699c8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1decaa260f724917a14294db9c0d4cb2",
+          "edgeType": "Edge",
+          "source": "b17a1111a40b4bdd9a832c635d1f3851",
+          "target": "cea7a9c3e6dc42b2b3d933127faf690d",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "85f2902596b946ab94d40a14b3f194fb": {
+      "id": "85f2902596b946ab94d40a14b3f194fb",
+      "name": "LiveAgent_application",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "9800625204944ea49d3ddd13911ca3ed": {
+      "id": "9800625204944ea49d3ddd13911ca3ed",
+      "name": "LiveAgent_short_description",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "64b39c056518488f9cf1e98d678492b2": {
+      "id": "64b39c056518488f9cf1e98d678492b2",
+      "name": "LiveAgent_search_text",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "24edbff2575b489eb1f99baa7d5cf6dd": {
+      "id": "24edbff2575b489eb1f99baa7d5cf6dd",
+      "name": "LiveAgent_portal",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "2a0ab7e39bd94d039c03ada6e7b08d9f": {
+      "id": "2a0ab7e39bd94d039c03ada6e7b08d9f",
+      "name": "LiveAgent_case",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "738d70fe520a4d5c828bc568d0d4904e": {
+      "category": "vaInputs",
+      "id": "738d70fe520a4d5c828bc568d0d4904e",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "386efcb3854d4061b83cd999e4aeb6ba": {
+      "id": "386efcb3854d4061b83cd999e4aeb6ba",
+      "name": "for_whom",
+      "label": "For Whom",
+      "varType": "boolean",
+      "category": "vaInputs"
+    },
+    "d19c14632aed469c900c64fb5572b3be": {
+      "id": "d19c14632aed469c900c64fb5572b3be",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "User_email_id",
+      "label": "User_email_id",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "bb8a117aba0c47f688cf46b1bbf078d9": {
+      "id": "bb8a117aba0c47f688cf46b1bbf078d9",
+      "name": "want_to_change_building",
+      "label": "Want To Change Building",
+      "varType": "boolean",
+      "category": "vaInputs"
+    }
+  }
+}</graph><key_phrases>copy_Of_User_Setup_Guide,User Setup Guide</key_phrases><library>false</library><live_agent>false</live_agent><name>copy_Of_User_Setup_Guide</name><nlu_intent/><nlu_intent_label/><nlu_model/><nlu_model_label/><nlu_provider/><roles>public</roles><source_topic_id>1e9bd8bfdb7220107f12e04a4896190a</source_topic_id><sys_class_name>sys_cb_topic</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-03-16 20:36:17</sys_created_on><sys_domain>global</sys_domain><sys_id>7f48b5b3dbb620107f12e04a4896193e</sys_id><sys_mod_count>14</sys_mod_count><sys_name>copy_Of_User_Setup_Guide</sys_name><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>sys_cb_topic_7f48b5b3dbb620107f12e04a4896193e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-03-16 21:08:39</sys_updated_on><type>STANDARD</type><variables/></sys_cb_topic><sys_variable_value action="delete_multiple" query="document_key=7f48b5b3dbb620107f12e04a4896193e"/></record_update>]]></payload>
+        <payload_hash>1796106543</payload_hash>
+        <record_name>copy_Of_User_Setup_Guide</record_name>
+        <reverted_from/>
+        <source>96b1ee31db3220107f12e04a489619ab</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-16 21:08:39</sys_created_on>
+        <sys_id>fdbfb1f7dbb620107f12e04a48961996</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1783cde86540000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-16 21:08:39</sys_updated_on>
+        <type>Topic</type>
+        <update_guid>39bfb1f793b62010687224c208601796</update_guid>
+        <update_guid_history>39bfb1f793b62010687224c208601796:1796106543,c35ff9f79eb620108514fd0f2d948cfc:-476690374,8dfdb5f787b62010d7c028b2d794deb0:-182440670,3d9d3df778b620103e0bbd53c885cf21:-876554709,025d31f73ab620105dadeeeb05146f71:-240202656,40ec35b77ab6201099dab7070aeea949:-1435612414,f27cfdb7c5b620104c0f908404ad12c7:-27140730,1e5c7d3785b62010eaf58b9f0fe4b545:-1382470917,74eb757737b620107fd6e776ccf0c07d:86229764,c09bf1b744b62010f30028e32fb4658a:-1120546630,d24bb5739eb620103532d05b2ad7b746:1106743195,c6ea7d37f1b620104c9d77dbbbd43e41:2129975494,e959f1b349762010e3d1b649312a1c97:855566603,80e8f5b3b07620108b7083b740caae30:2121429967,0458b9f3feb62010fd23964d75a62556:613053915</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-16 21:56:21</sys_created_on>
+        <sys_db_object display_value="" name="sys_cb_topic">sys_cb_topic</sys_db_object>
+        <sys_id>0d58a7f752e64e48b9ba2e68bfcd9040</sys_id>
+        <sys_metadata>7f48b5b3dbb620107f12e04a4896193e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>copy_Of_User_Setup_Guide</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_cb_topic_7f48b5b3dbb620107f12e04a4896193e</sys_update_name>
+        <sys_update_version display_value="sys_cb_topic_7f48b5b3dbb620107f12e04a4896193e">fdbfb1f7dbb620107f12e04a48961996</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-16 21:56:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

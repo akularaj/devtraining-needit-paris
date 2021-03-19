@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="DELETE">
+        <applicability/>
+        <category display_value="Customer Service Topics">b28634c4b7b93300da7ab948ee11a93a</category>
+        <channels/>
+        <connect_queue/>
+        <description>New User Guide</description>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.21",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "53282a174f1644799883952b79b96ee1": {
+          "id": "53282a174f1644799883952b79b96ee1",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "9c5e2281ee854eacbe774b2099c867ba": {
+          "id": "9c5e2281ee854eacbe774b2099c867ba",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "6a85ebd029c847a9bfcff7928f91645d": {
+          "id": "6a85ebd029c847a9bfcff7928f91645d",
+          "stepType": "Prompt",
+          "name": "start_grreting",
+          "prompt": {
+            "value": "Hello {{vaInputs.user.name}}i will guide you thought the Induction process",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "ok got your message",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "8a1b1deac4b64ebe84c2973f1391b55b",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "16e9b63bd12943f6bbe7646ae57aa5a2",
+          "edgeType": "Edge",
+          "source": "53282a174f1644799883952b79b96ee1",
+          "target": "6a85ebd029c847a9bfcff7928f91645d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9fbe8fdb153f4663b746b4cb514cfb7f",
+          "edgeType": "Edge",
+          "source": "6a85ebd029c847a9bfcff7928f91645d",
+          "target": "9c5e2281ee854eacbe774b2099c867ba",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "8a1b1deac4b64ebe84c2973f1391b55b": {
+      "id": "8a1b1deac4b64ebe84c2973f1391b55b",
+      "name": "start_grreting",
+      "label": "Start_grreting",
+      "varType": "string",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>New User Guide,guide new user,new user,guide</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>New User Guide</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-11 09:44:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7413bd4adbfa20107f12e04a4896198a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>New User Guide</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_7413bd4adbfa20107f12e04a4896198a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-11 10:10:45</sys_updated_on>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="DELETE" query="document_key=7413bd4adbfa20107f12e04a4896198a"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>02066f27db9253408264f70fbf9619a8</instance_id>
+        <instance_name>dev60302</instance_name>
+        <name>sys_cb_topic_7413bd4adbfa20107f12e04a4896198a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic"><sys_cb_topic action="INSERT_OR_UPDATE"><applicability/><category display_value="Customer Service Topics">b28634c4b7b93300da7ab948ee11a93a</category><channels/><connect_queue/><description>New User Guide</description><flexible_conversation_switching>false</flexible_conversation_switching><graph>{
+  "graph_api_version": "1.0.21",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "53282a174f1644799883952b79b96ee1": {
+          "id": "53282a174f1644799883952b79b96ee1",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "9c5e2281ee854eacbe774b2099c867ba": {
+          "id": "9c5e2281ee854eacbe774b2099c867ba",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "6a85ebd029c847a9bfcff7928f91645d": {
+          "id": "6a85ebd029c847a9bfcff7928f91645d",
+          "stepType": "Prompt",
+          "name": "start_grreting",
+          "prompt": {
+            "value": "Hello {{vaInputs.user.name}}i will guide you thought the Induction process",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "ok got your message",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "8a1b1deac4b64ebe84c2973f1391b55b",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "16e9b63bd12943f6bbe7646ae57aa5a2",
+          "edgeType": "Edge",
+          "source": "53282a174f1644799883952b79b96ee1",
+          "target": "6a85ebd029c847a9bfcff7928f91645d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9fbe8fdb153f4663b746b4cb514cfb7f",
+          "edgeType": "Edge",
+          "source": "6a85ebd029c847a9bfcff7928f91645d",
+          "target": "9c5e2281ee854eacbe774b2099c867ba",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "8a1b1deac4b64ebe84c2973f1391b55b": {
+      "id": "8a1b1deac4b64ebe84c2973f1391b55b",
+      "name": "start_grreting",
+      "label": "Start_grreting",
+      "varType": "string",
+      "category": "vaInputs"
+    }
+  }
+}</graph><key_phrases>New User Guide,guide new user,new user,guide</key_phrases><library>false</library><live_agent>false</live_agent><name>New User Guide</name><nlu_intent/><nlu_intent_label/><nlu_model/><nlu_model_label/><nlu_provider/><roles/><source_topic_id/><sys_class_name>sys_cb_topic</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-03-11 09:44:02</sys_created_on><sys_domain>global</sys_domain><sys_id>7413bd4adbfa20107f12e04a4896198a</sys_id><sys_mod_count>2</sys_mod_count><sys_name>New User Guide</sys_name><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>sys_cb_topic_7413bd4adbfa20107f12e04a4896198a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-03-11 10:10:45</sys_updated_on><type>STANDARD</type><variables/></sys_cb_topic><sys_variable_value action="delete_multiple" query="document_key=7413bd4adbfa20107f12e04a4896198a"/></record_update>]]></payload>
+        <payload_hash>1713344083</payload_hash>
+        <record_name>New User Guide</record_name>
+        <reverted_from/>
+        <source>96b1ee31db3220107f12e04a489619ab</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-11 10:10:45</sys_created_on>
+        <sys_id>c0393942db7e20107f12e04a48961993</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17820c465b80000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-11 10:10:45</sys_updated_on>
+        <type>Topic</type>
+        <update_guid>0c393942027e2010c6de490980619892</update_guid>
+        <update_guid_history>0c393942027e2010c6de490980619892:1713344083,c7c3b18a44ba2010062f66f4c1159e0f:265883322,45137142f67e20100e521fa5386e58ad:420748221</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-16 21:56:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_cb_topic">sys_cb_topic</sys_db_object>
+        <sys_id>875891a54ade4fcd94d57ad89ad62b59</sys_id>
+        <sys_metadata>7413bd4adbfa20107f12e04a4896198a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New User Guide</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_cb_topic_7413bd4adbfa20107f12e04a4896198a</sys_update_name>
+        <sys_update_version display_value="sys_cb_topic_7413bd4adbfa20107f12e04a4896198a">c0393942db7e20107f12e04a48961993</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-16 21:56:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
